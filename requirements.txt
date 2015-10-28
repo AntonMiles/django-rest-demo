@@ -1,0 +1,4 @@
+django==1.8.5
+pysqlite==2.6.3
+djangorestframework==3.2.4
+django-cors-headers==1.1.0
