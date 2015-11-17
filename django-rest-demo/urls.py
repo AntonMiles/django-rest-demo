@@ -15,21 +15,17 @@ Including another URLconf
 """
 
 from django.conf.urls import url, include
-from rest_framework import routers
 from django.contrib import admin
-from albums import views
+import albums.urls
+import auth.urls
 
 admin.autodiscover()
-router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
-router.register(r'musicians', views.MusicianViewSet)
-router.register(r'albums', views.AlbumViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^music/', include(albums.urls)),
+    url(r'^auth/', include(auth.urls))
     ]

@@ -1,4 +1,3 @@
-__author__ = 'anton'
 from django.contrib.auth.models import User, Group
 from albums.models import Musician, Album
 from rest_framework import serializers

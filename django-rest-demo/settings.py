@@ -41,13 +41,17 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'albums',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework.authtoken'
 )
 
+"""Django-Rest-Framework defaults"""
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
-    'PAGE_SIZE': 10
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',),
+    'PAGE_SIZE': 10,
 }
+"""End Django-Rest-Framework defaults"""
 
 ADMIN_URL_PATH = 'admin'
 
@@ -88,13 +92,14 @@ WSGI_APPLICATION = 'django-rest-demo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+"""Database Setup (SQLite is used so that the demo is easier to deploy with data)"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'demoapi.db')
     }
 }
-
+"""End Database Setup"""
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
