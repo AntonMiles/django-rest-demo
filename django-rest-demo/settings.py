@@ -39,14 +39,19 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'albums',
+    'corsheaders',
     'rest_framework',
-    'corsheaders'
+    'knox',
+    'albums',
 )
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
     'PAGE_SIZE': 10
+}
+
+REST_KNOX = {
+    'TOKEN_TTL': 300,
 }
 
 ADMIN_URL_PATH = 'admin'

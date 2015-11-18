@@ -1,4 +1,6 @@
 django==1.8.5
 pysqlite==2.6.3
 djangorestframework==3.2.4
+cryptography==1.1
+django-rest-knox==2.1.2
 django-cors-headers==1.1.0
