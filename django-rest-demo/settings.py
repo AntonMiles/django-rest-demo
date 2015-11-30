@@ -39,9 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'albums',
+    'corsheaders',
     'rest_framework',
-    'corsheaders'
+    'albums',
 )
 
 REST_FRAMEWORK = {
